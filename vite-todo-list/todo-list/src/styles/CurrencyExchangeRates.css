@@ -1,0 +1,39 @@
+table, th, td {
+  border: 1px solid white;
+  color: white;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 5%;
+  color: #c0bca1;
+}
+
+.search-input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.currency-search {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.search-history {
+  font-weight: bold;
+  font-size: 24px;
+  color: #d87116f1;
+}
+
+.history-text {
+  font-size: 14px;
+}
