@@ -1,0 +1,17 @@
+.news-container {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+}
+.news-item {
+  color: #E2DFD0;
+}
+.news-link {
+  color: #E2DFD0;
+}
+.news-link:hover {
+  color:  #d87116f1;
+}
+.news-link:visited {
+  color:  #d87116f1;
+}

@@ -42,18 +42,18 @@ export default function Tasks({ tasks, complete, input }) {
     const entropy = Date.now();
 
     return (
-      <div key={entropy}>
-        <div className='taskList-item-container' key={key} id={key}>
+      <div className='taskList-item-container' key={`${key}-${entropy}`}>
+        <div className='taskList-items' key={`${key}-${entropy}`} id={key}>
           <div id={key} key={`Task${key}`} className='remove-task-button' onClick={() => removeTask(key)}>Remove</div>
-          <div id={key} key={`Task${value}`} className='task-item'>{value}</div>
-          <div id={key} key={`Task-complete-${value}`} className='task-complete' onClick={() => markComplete(key)}>Complete</div>
+          <div id={key} key={`Task${value}-${entropy}`} className='task-item'>{value}</div>
+          <div id={key} key={`Task-complete-${value}-${entropy}`} className='task-complete' onClick={() => markComplete(key)}>Complete</div>
         </div>
       </div>
     );
   });
 
   return (
-    <div className='tasks-component'>
+    <div className='tasks-container'>
       <h2 className='centered-h2'>ToDo List</h2>
       <form className='input-container' onSubmit={handleTaskSubmit}>
         <input
@@ -64,7 +64,7 @@ export default function Tasks({ tasks, complete, input }) {
           placeholder='Enter task here...'>
         </input>
         <button className='task-input-button' type='submit'>
-          Add Task
+          Add
         </button>
       </form>
       <div className='taskList-container'>

@@ -72,7 +72,7 @@ export default function CurrencyExchange() {
   const buildHistory = Object.keys(searchHistory).map(key => {
     const value = searchHistory[key];
 
-    return (<div className='footer-text history-text' key={key}>{key}: {value}</div>);
+    return (<div className='footer-text history-text' key={key}>{key} : {value}</div>);
     });
 
   if ( Object.keys(output).length === 0 || output === undefined ) return "Loading..."

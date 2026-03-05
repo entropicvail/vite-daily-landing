@@ -1,45 +1,53 @@
+.tasks-component {
+
+}
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
 .input-container {
   display: flex;
   flex-direction: row;
-  padding-bottom: 20px;
-  padding-left: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1%;
+  width: 75%;
 }
-
-.tasks-container {
-    padding-right: 25%;
-}
-
 .task-input {
   display: flex;
   background-color: #E2DFD0;
-  margin: 5px;
-  padding: 5px;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
 }
-
 .task-input-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   background-color: #E2DFD0;
   color: #423825;
-  margin: 5px;
-  padding: 5px;
   border-radius: 5px;
   font-weight: bold;
+  height: 25px;
 }
-
 .taskList-container {
   display: flex;
   flex-direction: column;
-  padding-left: 27%;
-  padding-right:25%;
+  width: 80%;
 }
-
 .taskList-item-container {
-  display: grid;
-  grid-template-columns: 70px auto 80px;
-  gap: 10px;
+  display: flex;
+  gap: 2rem;
 }
-
+.taskList-items {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
 .remove-task-button {
   display: flex;
   justify-content: center;
@@ -48,23 +56,22 @@
   color: #423825;
   font-size: 14px;
   font-weight: bold;
-  margin: 5px;
-  padding: 5px;
   border-radius: 5px;
   cursor: default;
+  width: 60px;
+  margin: 1%;
 }
-
 .task-item {
   display: flex;
   flex: 1;
   align-items: center;
   background-color: #E2DFD0;
   color: #1f190f;
-  margin: 5px;
-  padding: 5px;
   border-radius: 5px;
+  margin: 1%;
+  height: 25px;
+  padding-left: 1%;
 }
-
 .task-complete {
   display: flex;
   justify-content: center;
@@ -73,8 +80,14 @@
   color: #423825;
   font-size: 14px;
   font-weight: bold;
-  margin: 5px;
-  padding: 5px;
   border-radius: 5px;
   cursor: default;
+  margin: 1%;
+  width: 70px;
+}
+.completed-component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

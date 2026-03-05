@@ -4,14 +4,17 @@ body {
   margin: 0;
   background-size: cover;
 }
-
 .spacer {
-    background-color: #8f8a62;
-    height: 55px;
-    margin: 0;
-    padding: 0;
+  background-color: #8f8a62;
+  height: 55px;
+  margin: 0;
+  padding: 0;
 }
-
+.div-separator {
+  margin-top: 2%;
+  height:2px;
+  background-color: black;
+}
 h1 {
   color: #d87116f1;
   text-align: center;
@@ -20,28 +23,24 @@ h1 {
   padding-top: 0;
   margin-top: 0;
 }
-
 .centered-h2 {
   text-align: center;
   color: #c0bca1;
 }
-
 .footer-text {
   padding-top: 1%;
   font-weight: bold;
   color: #c0bca1;
+  font-size: 18px;
 }
-
 .black-text {
   color: black
 }
-
-.rates-tasks-container {
+.rates-tasks-calendar-container {
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 20% 50% 30%;
   gap: 1%;
 }
-
 input {
   display: flex;
   background-color: #E2DFD0;
@@ -50,16 +49,13 @@ input {
   border-radius: 5px;
   width: 50%;
 }
-
 button {
-  background-color: #E2DFD0;
-  color: #423825;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
+  background-color: #47423a;
+  color: #E2DFD0;
+  border: none;
   font-weight: bold;
+  font-size: 15px;
 }
-
 .div-button {
   display: flex;
   background-color: #E2DFD0;
@@ -69,4 +65,8 @@ button {
   width: 35px;
   height: 25px;
   font-size: 18px;
+}
+.bottom-home-container {
+display: flex;
+flex-direction: row;
 }

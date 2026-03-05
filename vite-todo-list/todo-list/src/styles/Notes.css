@@ -1,0 +1,14 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.text-area {
+  margin-left: 10%;
+  padding: 1%;
+  background-color: #E2DFD0;
+}
+.char-count {
+  color: #d87116f1;
+}
