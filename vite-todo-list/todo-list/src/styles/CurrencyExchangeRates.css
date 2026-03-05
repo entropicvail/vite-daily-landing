@@ -4,8 +4,8 @@
 }
 
 table, th, td {
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #E2DFD0;
+  color: #E2DFD0;
 }
 table {
   border-collapse: collapse;
@@ -37,8 +37,11 @@ caption {
 
 .search-history {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16px;
   color: #d87116f1;
+  border: solid 2px #E2DFD0;
+  padding: 1%;
+  margin-top: 1%;
 }
 
 .history-text {

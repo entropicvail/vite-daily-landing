@@ -1,0 +1,25 @@
+.all-rates-component {
+  display: flex;
+  flex-direction: column;
+}
+.all-rates-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+}
+.top-link {
+  display: flex;
+  font-size: 18px;
+  justify-items: center;
+  text-align: left;
+  align-items: center;
+  padding-left: 5%;
+  color: #d87116f1;
+  height: 64px;
+}
+.allrates-item {
+  flex: 1 1 calc(33.33% - 20px);
+  padding: 20px;
+  tex-align: center;
+  box-sizing: border-box;
+}

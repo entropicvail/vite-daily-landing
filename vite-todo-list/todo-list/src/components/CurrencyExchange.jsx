@@ -92,9 +92,9 @@ export default function CurrencyExchange() {
           </input>
           <button onClick={ratesSearch} value={input}>Search</button>
         </div>
-        <div className='footer-text'>Current Search | {currentCurrency}</div>
+        <div className='footer-text'>Results | {currentCurrency}</div>
         <div className="footer-text search-history" >
-          Custom List
+          History
           {buildHistory}
         </div>
       </div>

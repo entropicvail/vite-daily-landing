@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
+import '../styles/AllRates.css'
 
 export default function() {
 
@@ -21,17 +22,19 @@ export default function() {
       const entropy = Date.now();
 
       return (
-          <div key={key} className='footer-text'>{key}: {value}</div>
+          <div key={key} className='footer-text allrates-item'>{key}: {value}</div>
       );
     });
 
 
   return (
-    <div className='all-rates-container'>
-      <Link to='/home'>
-        <div className='black-text'>Home</div>
-      </Link>
-      {buildAllRates}
+    <div className='all-rates-component'>
+        <Link to='/home'>
+          <h1 className='top-link'>Home</h1>
+        </Link>
+      <div className='all-rates-container'>
+        {buildAllRates}
+      </div>
     </div>
   );
 };
