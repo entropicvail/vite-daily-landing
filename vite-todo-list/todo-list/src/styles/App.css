@@ -32,6 +32,10 @@ h1 {
   color: #c0bca1;
 }
 
+.black-text {
+  color: black
+}
+
 .rates-tasks-container {
   display: grid;
   grid-template-columns: 25% 1fr;
@@ -54,4 +58,15 @@ button {
   padding: 5px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.div-button {
+  display: flex;
+  background-color: #E2DFD0;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 25px;
+  font-size: 18px;
 }

@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import fetchAPI from '../api/fetchAPI'
-import '../styles/CurrencyExchangeRates.css'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import fetchAPI from '../api/fetchAPI';
+import '../styles/CurrencyExchangeRates.css';
 
 export default function CurrencyExchange() {
   const output = fetchAPI('https://open.er-api.com/v6/latest/USD');
   const [ input, setInput ] = useState('');
   const [ currentCurrency, setCurrentCurrency ] = useState('');
   const [ searchHistory, setSearchHistory ] = useState({});
+  const navigate = useNavigate();
 
   const buildRates = () => {
 
@@ -45,6 +47,11 @@ export default function CurrencyExchange() {
     )
   }
 
+  function handleAllClick(event) {
+    event.preventDefault();
+    navigate('/allrates');
+  }
+
   function handleInput(event) {
     event.preventDefault()
     setInput(event.target.value)
@@ -76,6 +83,7 @@ export default function CurrencyExchange() {
       <div className='footer-text'>{output.time_last_update_utc}</div>
       <div className='currency-search'>
         <div className='search-input-container'>
+          <button onClick={handleAllClick}>All</button>
           <input
             type='search'
             placeholder='Enter currency...'
@@ -86,7 +94,7 @@ export default function CurrencyExchange() {
         </div>
         <div className='footer-text'>Current Search | {currentCurrency}</div>
         <div className="footer-text search-history" >
-          Search History
+          Custom List
           {buildHistory}
         </div>
       </div>

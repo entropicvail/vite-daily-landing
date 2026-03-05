@@ -1,3 +1,7 @@
+.rates-container {
+  padding-left: 5%;
+}
+
 table, th, td {
   border: 1px solid white;
   color: white;
@@ -21,6 +25,8 @@ caption {
 .search-input-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  padding-top: 2%;
 }
 
 .currency-search {

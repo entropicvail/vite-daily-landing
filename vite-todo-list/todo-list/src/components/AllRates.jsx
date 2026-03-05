@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
 export default function() {
+
   const [ allRates, setAllRates ] = useState({});
 
   useEffect(() => {
@@ -19,15 +21,16 @@ export default function() {
       const entropy = Date.now();
 
       return (
-        <>
-          <div key={entropy} className='footer-text'>{key}: {value}</div>
-        </>
+          <div key={key} className='footer-text'>{key}: {value}</div>
       );
     });
 
 
   return (
     <div className='all-rates-container'>
+      <Link to='/home'>
+        <div className='black-text'>Home</div>
+      </Link>
       {buildAllRates}
     </div>
   );
