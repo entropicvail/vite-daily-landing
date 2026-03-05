@@ -80,7 +80,7 @@ export default function CurrencyExchange() {
   return (
     <div className='rates-container'>
       {buildRates()}
-      <div className='footer-text'>{output.time_last_update_utc}</div>
+      <div className='footer-text'>Checked: {output.time_last_update_utc}</div>
       <div className='currency-search'>
         <div className='search-input-container'>
           <button onClick={handleAllClick}>All</button>
