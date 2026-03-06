@@ -21,7 +21,6 @@ export default function TasksCompleted({ complete }) {
     );
   });
 
-
   return (
     <div className='completed-component'>
       <h2 className='centered-h2'>Completed Tasks</h2>

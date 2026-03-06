@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../styles/Tasks.css';
 
 export default function Tasks({ tasks, complete, input }) {

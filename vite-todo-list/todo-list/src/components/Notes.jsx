@@ -1,17 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
-import '../styles/Notes.css'
-import encryptThings from '../helpers/encryptThings'
+import '../styles/Notes.css';
+import EncryptText from './EncryptText';
+import DecryptText from './DecryptText';
 
 export default function Notes() {
 
-  const [note, setNote] = useState(() => {
+  const [ note, setNote ] = useState(() => {
     const savedNote = localStorage.getItem('saved_note');
     return savedNote ? JSON.parse(savedNote) : '';
   });
 
   useEffect(() => {
     localStorage.setItem('saved_note', JSON.stringify(note));
-  }, [note])
+  }, [note]);
 
   const textAreaRef = useRef(null);
 
@@ -20,10 +21,7 @@ export default function Notes() {
     textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 'px';
   }, [note]);
 
-
-  const text = 'Test';
-  const pass = 'password';
-  encryptThings(text, pass)
+  const noteExport = { note, setNote };
 
   return (
     <div className='notes-container'>
@@ -36,6 +34,10 @@ export default function Notes() {
         placeholder="Type your notes here..."
         style={{ overflow: 'hidden', resize: 'none', width: '100%' }}
       />
+      <div className='enc-container'>
+        <EncryptText noteExport={noteExport} />
+        <DecryptText noteExport={noteExport} />
+      </div>
     </div>
   );
 };

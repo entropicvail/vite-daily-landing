@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Tasks from './Tasks'
-import TasksCompleted from './TasksCompleted'
-import CurrencyExchange from './CurrencyExchange'
-import Calendar from './Calendar'
-import News from './News'
-import Notes from './Notes'
+import Tasks from './Tasks';
+import TasksCompleted from './TasksCompleted';
+import CurrencyExchange from './CurrencyExchange';
+import Calendar from './Calendar';
+import News from './News';
+import Notes from './Notes';
 
 export default function Home() {
   const [ userInput, setUserInput ] = useState("");
@@ -21,11 +21,11 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem('local_tasks', JSON.stringify(taskList));
-  }, [taskList])
+  }, [taskList]);
 
   useEffect(() => {
     localStorage.setItem('local_completed', JSON.stringify(completedTasks))
-  })
+  });
 
   const input = { userInput, setUserInput };
   const tasks = { taskList, setTaskList };
