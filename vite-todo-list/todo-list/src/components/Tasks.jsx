@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import '../styles/Tasks.css';
 
 export default function Tasks({ tasks, complete, input }) {
 
   const { userInput, setUserInput } = input;
   const { taskList, setTaskList } = tasks;
-  const { completedTask, setCompletedTasks } = complete;
+  const { completedTasks, setCompletedTasks } = complete;
 
   function removeTask(task) {
     const newTaskList = {...taskList};
@@ -13,10 +14,10 @@ export default function Tasks({ tasks, complete, input }) {
   };
 
   function markComplete(task) {
-    let numOfTasks = Object.keys(completedTask).length;
+    let numOfTasks = Object.keys(completedTasks).length;
     if ( numOfTasks === 0 )  { numOfTasks = 1
     } else { numOfTasks++ };
-    const newCompletedTaskList = {...completedTask};
+    const newCompletedTaskList = {...completedTasks};
     const value = taskList[task];
     setCompletedTasks({...newCompletedTaskList, [numOfTasks]: [value]});
     removeTask(task);

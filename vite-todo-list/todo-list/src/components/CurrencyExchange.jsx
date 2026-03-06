@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import fetchAPI from '../api/fetchAPI';
+import fetchAPI from '../helpers/fetchAPI';
 import '../styles/CurrencyExchangeRates.css';
 
 export default function CurrencyExchange() {

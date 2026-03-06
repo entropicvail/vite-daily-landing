@@ -2,16 +2,16 @@ import '../styles/Tasks.css';
 
 export default function TasksCompleted({ complete }) {
 
-  const { completedTask, setCompletedTasks } = complete;
+  const { completedTasks, setCompletedTasks } = complete;
 
   function removeTask(task) {
-    const newTaskList = {...completedTask};
+    const newTaskList = {...completedTasks};
     delete newTaskList[task];
     setCompletedTasks(newTaskList);
   };
 
-  const buildCompletedTaskList = Object.keys(completedTask).map(key => {
-    const value = completedTask[key];
+  const buildCompletedTaskList = Object.keys(completedTasks).map(key => {
+    const value = completedTasks[key];
 
     return (
       <div className='taskList-item-container' key={key} id={key}>

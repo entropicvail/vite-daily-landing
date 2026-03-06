@@ -6,7 +6,7 @@ body {
 }
 .spacer {
   background-color: #8f8a62;
-  height: 55px;
+  height: 35px;
   margin: 0;
   padding: 0;
 }
@@ -17,10 +17,11 @@ body {
 }
 h1 {
   color: #d87116f1;
-  text-align: center;
-  font-size: 64px;
+  text-align: left;
+  font-size: 38px;
   background-color: #362f21;
   padding-top: 0;
+  padding-left: 2%;
   margin-top: 0;
 }
 .centered-h2 {
