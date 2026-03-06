@@ -32,7 +32,7 @@ export default function Notes() {
         value={note}
         onChange={(e) => setNote(e.target.value)}
         placeholder="Type your notes here..."
-        style={{ overflow: 'hidden', resize: 'none', width: '100%' }}
+        style={{ overflow: 'hidden', resize: 'none', width: '90%' }}
       />
       <div className='enc-container'>
         <EncryptText noteExport={noteExport} />

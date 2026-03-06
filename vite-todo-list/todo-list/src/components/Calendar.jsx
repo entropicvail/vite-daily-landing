@@ -55,13 +55,13 @@ export default function Calendar() {
         </div>
         <div className="calendar-body">
           <div className="calendar-weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
+            <div className='calendar-weekday'>S</div>
+            <div className='calendar-weekday'>M</div>
+            <div className='calendar-weekday'>T</div>
+            <div className='calendar-weekday'>W</div>
+            <div className='calendar-weekday'>T</div>
+            <div className='calendar-weekday'>F</div>
+            <div className='calendar-weekday'>S</div>
           </div>
           <div className="calendar-dates">
             {blanks.map((_, i) => (

@@ -5,6 +5,7 @@
 }
 .calendar {
   width: 80%;
+  max-width: 600px;
   background-color: #47423a;
   box-shadow: 0 2px 8px  #eaeef3;
   margin-bottom: 5px;
@@ -41,20 +42,26 @@
 }
 .calendar-weekdays div, .calendar-dates div {
   text-align: center;
-  padding: 10px;
+  padding: clamp(4px, 1vw, 10px);
 }
 .calendar-weekdays {
   background-color: #8f8a62;
   color: #E2DFD0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
 }
 .calendar-weekdays div {
   font-weight: bold;
   color: #E2DFD0;
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
 }
 .calendar-dates div {
   border-bottom: 1px solid #eaeef3;
   cursor: pointer;
   color: #E2DFD0;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+
 }
 .calendar-dates div:hover {
   background-color: #f1f1f1;
