@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import '../styles/Notes.css';
 import EncryptText from './EncryptText';
@@ -21,11 +22,13 @@ export default function Notes() {
     textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 'px';
   }, [note]);
 
+  const location =  useLocation();
+  const currentPath = location.pathname;
   const noteExport = { note, setNote };
 
   return (
     <div className='notes-container'>
-      <h2 className='centered-h2'>Running Notes</h2>
+      <h2 className='centered-h2'>{ 'Running Notes' }</h2>
       <textarea
         className='text-area'
         ref={textAreaRef}

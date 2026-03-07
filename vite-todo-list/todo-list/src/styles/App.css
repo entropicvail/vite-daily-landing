@@ -1,14 +1,28 @@
+.spacer {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  background-color: #8f8a62;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  padding-right:1%;
+}
+.header-link {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 8px;
+}
+.header-link:hover {
+  cursor:default;
+  font-size: 22.5px;
+}
 body {
   background-color: #47423a;
   padding: 0;
   margin: 0;
   background-size: cover;
-}
-.spacer {
-  background-color: #8f8a62;
-  height: 35px;
-  margin: 0;
-  padding: 0;
 }
 .div-separator {
   margin-top: 2%;

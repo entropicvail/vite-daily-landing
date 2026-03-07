@@ -24,8 +24,8 @@ export default function Home() {
   }, [taskList]);
 
   useEffect(() => {
-    localStorage.setItem('local_completed', JSON.stringify(completedTasks))
-  });
+    localStorage.setItem('local_completed', JSON.stringify(completedTasks));
+  }), [completedTasks];
 
   const input = { userInput, setUserInput };
   const tasks = { taskList, setTaskList };
@@ -33,8 +33,6 @@ export default function Home() {
 
   return (
     <div id='home-container'>
-      <div className='spacer'></div>
-      <h1>Dash</h1>
       <div className='rates-tasks-calendar-container'>
         <CurrencyExchange />
         <div className='tasks-component'>

@@ -26,12 +26,8 @@ export default function() {
       );
     });
 
-
   return (
     <div className='all-rates-component'>
-        <Link to='/home'>
-          <h1 className='top-link'>Home</h1>
-        </Link>
       <div className='all-rates-container'>
         {buildAllRates}
       </div>
