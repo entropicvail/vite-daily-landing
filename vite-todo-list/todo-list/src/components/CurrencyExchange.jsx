@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import fetchAPI from '../helpers/fetchAPI';
 import '../styles/CurrencyExchangeRates.css';
 
@@ -7,11 +7,18 @@ export default function CurrencyExchange() {
   const output = fetchAPI('https://open.er-api.com/v6/latest/USD');
   const [ input, setInput ] = useState('');
   const [ currentCurrency, setCurrentCurrency ] = useState('');
-  const [ searchHistory, setSearchHistory ] = useState({});
+  const [ searchHistory, setSearchHistory ] = useState(() => {
+    const savedSearch = localStorage.getItem('local_currency_search');
+    return savedSearch ? JSON.parse(savedSearch) : {};
+  });
+
+  useEffect(() => {
+    localStorage.setItem('local_currency_search', JSON.stringify(searchHistory));
+  }, [searchHistory]);
+
   const navigate = useNavigate();
 
   const buildRates = () => {
-
     return (
       <table>
         <caption>Today's Rates | USD</caption>
@@ -69,6 +76,10 @@ export default function CurrencyExchange() {
     }
   }
 
+  function clearSearchHistory() {
+    setSearchHistory({});
+  }
+
   const buildHistory = Object.keys(searchHistory).map(key => {
     const value = searchHistory[key];
 
@@ -94,7 +105,10 @@ export default function CurrencyExchange() {
         </div>
         <div className='footer-text'>Results | {currentCurrency}</div>
         <div className="footer-text search-history" >
-          History
+          <div className='search-history-header'>
+            <div>History</div>
+            <div onClick={clearSearchHistory}>Clear</div>
+          </div>
           {buildHistory}
         </div>
       </div>

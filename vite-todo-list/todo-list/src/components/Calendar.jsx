@@ -3,6 +3,7 @@ import { useSelectedDateProvider } from '../context/selectedDateContext'
 import "../styles/Calendar.css";
 
 export default function Calendar() {
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(null);
 

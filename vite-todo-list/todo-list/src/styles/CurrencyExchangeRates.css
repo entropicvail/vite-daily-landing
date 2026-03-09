@@ -2,7 +2,6 @@
   padding-left: 5%;
   padding-top: 5%;
 }
-
 table, th, td {
   border: 1px solid #E2DFD0;
   color: #E2DFD0;
@@ -15,26 +14,24 @@ th, td {
   padding: 10px;
   text-align: left;
 }
-
 caption {
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 5%;
   color: #c0bca1;
 }
-
 .search-input-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding-top: 2%;
+  margin-bottom: 2%;
 }
-
 .currency-search {
   font-weight: bold;
   font-size: 24px;
 }
-
 .search-history {
   font-weight: bold;
   font-size: 16px;
@@ -43,7 +40,11 @@ caption {
   padding: 1%;
   margin-top: 1%;
 }
-
 .history-text {
   font-size: 14px;
+}
+.search-history-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: default;
 }

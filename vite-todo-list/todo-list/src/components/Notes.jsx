@@ -10,6 +10,8 @@ export default function Notes() {
     return savedNote ? JSON.parse(savedNote) : '';
   });
 
+  // const [ isOpen, setIsOpen ] = useState(fase);
+
   useEffect(() => {
     localStorage.setItem('saved_note', JSON.stringify(note) );
   }, [note]);

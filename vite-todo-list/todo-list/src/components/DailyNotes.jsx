@@ -8,16 +8,29 @@ import DecryptText from './DecryptText';
 
 export default function DailyNotes() {
 
+  const { sharedDate } = useSelectedDateProvider();
+
   const [ note, setNote ] = useState(() => {
     const savedNote = localStorage.getItem('daily_note');
-    return savedNote ? JSON.parse(savedNote) : {};
+    return savedNote ? JSON.parse(savedNote) : '';
   });
 
   useEffect(() => {
-    localStorage.setItem('daily_note', JSON.stringify(note));
+    if (!hasLoaded.current) return;
+    const storedNotes = JSON.parse(localStorage.getItem('daily_note') || '{}');
+    storedNotes[sharedDate] = note;
+    localStorage.setItem('daily_note', JSON.stringify(storedNotes));
   }, [note]);
 
+  useEffect(() => {
+    const storedNotes = JSON.parse(localStorage.getItem('daily_note') || '{}');
+    const loadedNote = storedNotes[sharedDate];
+    setNote(typeof loadedNote === 'string' ? loadedNote : '');
+    hasLoaded.current = true;
+  }, [sharedDate]);
+
   const textAreaRef = useRef(null);
+  const hasLoaded = useRef(false);
 
   useEffect(() => {
     textAreaRef.current.style.height = 'auto';
@@ -25,22 +38,20 @@ export default function DailyNotes() {
   }, [note]);
 
   const noteExport = { note, setNote };
-  const { sharedDate } = useSelectedDateProvider();
-
-  console.log(typeof note)
 
   return (
     <div className='dailyNotes-container'>
       <Calendar />
       <Notes />
       <div className='div-separator'></div>
-      <h2 className='centered-h2'>{ 'Daily Notes' }</h2>
+      <h2 className='centered-h2'>Daily Notes</h2>
+      <div className='orange-text'>Current Note: {sharedDate}</div>
         <div className='notes-container'>
           <textarea
             className='text-area'
             ref={textAreaRef}
             value={note}
-            onChange={(e) => setNote(e.target.value)}
+            onChange={(e) => setNote( e.target.value )}
             placeholder="Type your notes here..."
             style={{ overflow: 'hidden', resize: 'none', width: '90%' }}
           />
