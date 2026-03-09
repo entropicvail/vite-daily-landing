@@ -1,4 +1,3 @@
-import { useLocation } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import '../styles/Notes.css';
 import EncryptText from './EncryptText';
@@ -12,7 +11,7 @@ export default function Notes() {
   });
 
   useEffect(() => {
-    localStorage.setItem('saved_note', JSON.stringify(note));
+    localStorage.setItem('saved_note', JSON.stringify(note) );
   }, [note]);
 
   const textAreaRef = useRef(null);
@@ -22,8 +21,6 @@ export default function Notes() {
     textAreaRef.current.style.height = textAreaRef.current.scrollHeight + 'px';
   }, [note]);
 
-  const location =  useLocation();
-  const currentPath = location.pathname;
   const noteExport = { note, setNote };
 
   return (

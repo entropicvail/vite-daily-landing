@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelectedDateProvider } from '../context/selectedDateContext'
 import "../styles/Calendar.css";
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(null);
 
+  const { sharedDate, setSharedDate } = useSelectedDateProvider();
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
   const today = new Date();
@@ -17,8 +19,11 @@ export default function Calendar() {
   function handleDayClick(day) {
     const selectedDate = new Date(currentYear, currentMonth, day);
     setSelectedDay(day);
-
-    console.log(selectedDate);
+    const year = selectedDate.getFullYear();
+    const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+    const date = String(selectedDate.getDate()).padStart(2, '0');
+    const formattedDate = `${date}/${month}/${year}`;
+    setSharedDate(formattedDate)
   }
 
   function prevMonth() {
@@ -43,6 +48,18 @@ export default function Calendar() {
     const formattedDate = `${day}/${month}/${year}`;
     return formattedDate;
   }
+
+  useEffect(() => {
+    const renderDefaultDate = () => {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      const formattedDate = `${day}/${month}/${year}`;
+      if ( sharedDate === '' ) setSharedDate(formattedDate)
+    };
+    renderDefaultDate();
+  }, [sharedDate]);
 
   return (
     <div className='calendar-container'>

@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import '../styles/Notes.css';
+import { useSelectedDateProvider } from '../context/selectedDateContext'
 import Calendar from './Calendar';
 import Notes from './Notes';
 import EncryptText from './EncryptText';
@@ -9,7 +10,7 @@ export default function DailyNotes() {
 
   const [ note, setNote ] = useState(() => {
     const savedNote = localStorage.getItem('daily_note');
-    return savedNote ? JSON.parse(savedNote) : '';
+    return savedNote ? JSON.parse(savedNote) : {};
   });
 
   useEffect(() => {
@@ -24,6 +25,9 @@ export default function DailyNotes() {
   }, [note]);
 
   const noteExport = { note, setNote };
+  const { sharedDate } = useSelectedDateProvider();
+
+  console.log(typeof note)
 
   return (
     <div className='dailyNotes-container'>
