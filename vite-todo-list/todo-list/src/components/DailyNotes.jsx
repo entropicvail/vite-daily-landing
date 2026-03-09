@@ -1,14 +1,17 @@
-import { useState, useRef, useEffect, useContext } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '../styles/Notes.css';
 import { useSelectedDateProvider } from '../context/selectedDateContext'
 import Calendar from './Calendar';
 import Notes from './Notes';
+import PopupSearch from './PopupSearch'
 import EncryptText from './EncryptText';
 import DecryptText from './DecryptText';
 
 export default function DailyNotes() {
 
   const { sharedDate } = useSelectedDateProvider();
+
+  const [ isOpen, setIsOpen ] = useState(false);
 
   const [ note, setNote ] = useState(() => {
     const savedNote = localStorage.getItem('daily_note');
@@ -39,12 +42,20 @@ export default function DailyNotes() {
 
   const noteExport = { note, setNote };
 
+  const toggleSearchBar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeSearchBar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className='dailyNotes-container'>
       <Calendar />
       <Notes />
       <div className='div-separator'></div>
-      <h2 className='centered-h2'>Daily Notes</h2>
+      <h2 className='centered-h2 default-cursor' onClick={() => PopupSearch}>Daily Notes</h2>
       <div className='orange-text'>Current Note: {sharedDate}</div>
         <div className='notes-container'>
           <textarea

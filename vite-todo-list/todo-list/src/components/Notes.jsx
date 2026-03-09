@@ -10,8 +10,6 @@ export default function Notes() {
     return savedNote ? JSON.parse(savedNote) : '';
   });
 
-  // const [ isOpen, setIsOpen ] = useState(fase);
-
   useEffect(() => {
     localStorage.setItem('saved_note', JSON.stringify(note) );
   }, [note]);
@@ -27,7 +25,7 @@ export default function Notes() {
 
   return (
     <div className='notes-container'>
-      <h2 className='centered-h2'>{ 'Running Notes' }</h2>
+      <h2 className='centered-h2'>Running Notes</h2>
       <textarea
         className='text-area'
         ref={textAreaRef}
