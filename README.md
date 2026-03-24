@@ -34,7 +34,7 @@ docker compose up
 
 *Front-end (website)*
 - https://ui.localhost
--http://localhost:5173
+- http://localhost:5173
 
 *Back-end (express api)*
 - https://api.localhost
