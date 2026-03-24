@@ -1,0 +1,9 @@
+ui.localhost {
+        tls internal
+        reverse_proxy ui:5173
+}
+
+api.localhost {
+        tls internal
+        reverse_proxy api:3001
+}
